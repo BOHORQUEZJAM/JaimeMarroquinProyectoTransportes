@@ -24,11 +24,11 @@ public class IOManager extends JFrame {
 		scrollPane = new JScrollPane();
 		panelUno = new PanelPrincipal();
 		panelUno.setBounds(200, 70, 400, 400);
-		
+		panelUno.setVisible(false);
 		add(panelUno);
 		panelVenta= new PanelVentas(scrollPane);
 		panelVenta.setBounds(180,20,400,500);
-		panelVenta.setVisible(false);
+		
 		add(panelVenta);
 		
 	}

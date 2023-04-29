@@ -73,12 +73,14 @@ public class PanelVentas extends JPanel implements ActionListener,ItemListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("este es un mensaje nuevo");
 	}
 	@Override
-	public void itemStateChanged(ItemEvent e) {
+	public void itemStateChanged(ItemEvent evento) {
 		// TODO Auto-generated method stub
-		
+		if (evento.getStateChange()==ItemEvent.SELECTED) {
+			
+		}
 	}
 
 }
