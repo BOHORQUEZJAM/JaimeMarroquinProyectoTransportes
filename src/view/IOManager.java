@@ -1,6 +1,5 @@
 package view;
 
-
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +17,11 @@ public class IOManager extends JFrame implements ActionListener {
 
 	private JPanel panelUno;
 	private JPanel panelVenta;
+	private JPanel panelDos;
+	private JPanel panelTres;
+	private JPanel panelCuatro;
+	private JPanel panelCinco;
+	private JPanel panelSeis;
 	private JScrollPane scrollPane;
 	private JButton btonUno;
 	private JButton btonDos;
@@ -43,13 +47,38 @@ public class IOManager extends JFrame implements ActionListener {
 		panelUno = new JPanel();
 		panelUno.setBounds(200, 70, 400, 400);
 		panelUno.setLayout(null);
-		panelUno.setBorder(new LineBorder(Color.decode("#0C5172"),40));
+		panelUno.setBorder(new LineBorder(Color.decode("#0C5172"), 40));
 		add(panelUno);
+		panelVenta = new PanelVentas(scrollPane);
+		panelVenta.setBounds(180, 20, 400, 500);
+		panelVenta.setVisible(false);
+		add(panelVenta);
+		panelDos = new PanelRutas();
+		panelDos.setBounds(30, 30, 600, 500);
+		panelDos.setVisible(false);
+		add(panelDos);
+		panelTres = new PanelComidas();
+		panelTres.setBounds(30, 30, 600, 500);
+		panelTres.setVisible(false);
+		add(panelTres);
+		panelCuatro = new PanelHospedaje();
+		panelCuatro.setBounds(30, 30, 600, 500);
+		panelCuatro.setVisible(false);
+		add(panelCuatro);
+		panelCinco = new PanelInformacion();
+		panelCinco.setBounds(30, 30, 600, 500);
+		panelCinco.setVisible(false);
+		add(panelCinco);
+		panelSeis = new PanelEmergencias();
+		panelSeis.setBounds(30, 30, 600, 500);
+		panelSeis.setVisible(false);
+		add(panelSeis);
 		iconoUno = new ImageIcon("src/imagenes/terminal-de-punto-de-venta.png");
 		iconoDos = new ImageIcon("src/imagenes/ruta.png");
-		iconoTres= new ImageIcon("src/imagenes/comedor.png");
+		iconoTres = new ImageIcon("src/imagenes/comedor.png");
 		iconoCuatro = new ImageIcon("src/imagenes/cama-del-hotel.png");
-		iconoCinco=  new ImageIcon("src/imagenes/informacion.png");
+		iconoCinco = new ImageIcon("src/imagenes/informacion.png");
+		iconoSeis = new ImageIcon("src/imagenes/kit-de-primeros-auxilios.png");
 		btonUno = new JButton(iconoUno);
 		btonUno.setBorder(null);
 		btonUno.setActionCommand("hola");
@@ -58,24 +87,29 @@ public class IOManager extends JFrame implements ActionListener {
 		panelUno.add(btonUno);
 		btonDos = new JButton(iconoDos);
 		btonDos.setBorder(null);
-		btonDos.setBounds(160,60, 66, 66);
+		btonDos.setActionCommand("milo");
+		btonDos.addActionListener(this);
+		btonDos.setBounds(160, 60, 66, 66);
 		panelUno.add(btonDos);
 		btonTres = new JButton(iconoTres);
-		btonTres.setBounds(260,60,66,66);
+		btonTres.setBounds(260, 60, 66, 66);
+		btonTres.setActionCommand("eeeyyyy");
+		btonTres.addActionListener(this);
 		panelUno.add(btonTres);
 		btonCuatro = new JButton(iconoCuatro);
-		btonCuatro.setBounds(60,140,66,66);
+		btonCuatro.setBounds(60, 140, 66, 66);
+		btonCuatro.setActionCommand("oeeeee");
+		btonCuatro.addActionListener(this);
 		panelUno.add(btonCuatro);
 		btonCinco = new JButton(iconoCinco);
-		btonCinco.setBounds(160,140,66,66);
+		btonCinco.setBounds(160, 140, 66, 66);
+		btonCinco.setActionCommand("millos");
+		btonCinco.addActionListener(this);
 		panelUno.add(btonCinco);
-		btonSeis = new JButton();
-		btonSeis.setBounds(260,140, 66,66);
+		btonSeis = new JButton(iconoSeis);
+		btonSeis.setBounds(260, 140, 66, 66);
+		btonSeis.addActionListener(this);
 		panelUno.add(btonSeis);
-		panelVenta= new PanelVentas(scrollPane);
-		panelVenta.setBounds(180,20,400,500);
-		panelVenta.setVisible(false);
-		add(panelVenta);
 
 	}
 
@@ -85,10 +119,32 @@ public class IOManager extends JFrame implements ActionListener {
 		if (e.getActionCommand().equals(btonUno.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelVenta.setVisible(true);
-		} else {
-
-
 		}
-
+		if (e.getActionCommand().equals(btonDos.getActionCommand())) {
+			panelUno.setVisible(false);
+			panelCinco.setVisible(false);
+			panelDos.setVisible(true);
+		}
+		if (e.getActionCommand().equals(btonTres.getActionCommand())) {
+			panelUno.setVisible(false);
+			panelDos.setVisible(false);
+			panelTres.setVisible(true);
+		}
+		if (e.getActionCommand().equals(btonCuatro.getActionCommand())) {
+			panelUno.setVisible(false);
+			panelTres.setVisible(false);
+			panelCuatro.setVisible(true);
+		}
+		if (e.getActionCommand().equals(btonCinco.getActionCommand())) {
+			panelUno.setVisible(false);
+			panelCuatro.setVisible(false);
+			panelCinco.setVisible(true);
+		}
+		if (e.getActionCommand().equals(btonSeis.getActionCommand())) {
+			panelUno.setVisible(false);
+			panelCinco.setVisible(false);
+			panelSeis.setVisible(true);
+		}
 	}
+
 }
