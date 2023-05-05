@@ -67,7 +67,7 @@ public class PanelVentas extends JPanel implements ItemListener {
 		destinoDepartamento.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		add(destinoDepartamento);
 		destinoMunicipio = new JComboBox();
-		destinoMunicipio.setBounds(240,235, 120, 30);
+		destinoMunicipio.setBounds(240, 235, 120, 30);
 		destinoMunicipio.setSelectedItem(new JScrollPane());
 		destinoMunicipio.setVisible(false);
 		add(destinoMunicipio);
@@ -102,18 +102,76 @@ public class PanelVentas extends JPanel implements ItemListener {
 								"Fómeque", "Fosca", "Funza", "Fúquene", "Fusagasugá", "Gachalá", "Gachancipá",
 								"Gachetá", "Gama", "Girardot", "Granada", "Guachetá", "Guaduas", "Guasca", "Guataquí",
 								"Guatavita", "Guayabal de Síquima", "Guayabetal", "Gutiérrez", "Jerusalén", "Junín",
-								"La Calera", "La Mesa", "La Palma", "La Peña", "La Vega", "Lenguazaque", "Machetá",
-								"Madrid", "Manta", "Medina", "Mosquera", "Nariño", "Nemocón", "Nilo", "Nimaima",
-								"Nocaima", "Pacho", "Paime", "Pandi", "Paratebueno", "Pasca", "Puerto Salgar", "Pulí",
-								"Quebradanegra", "Quetame", "Quipile", "Ricaurte", "San Antonio del Tequendama",
-								"San Bernardo", "San Cayetano", "San Francisco", "San Juan de Rioseco", "Sasaima",
-								"Sesquilé", "Sibaté", "Silvania", "Simijaca", "Soacha", "Sopó", "Subachoque", "Suesca",
+								"La Calera", "Sibaté", "Silvania", "Simijaca", "Soacha", "Sopó", "Subachoque", "Suesca",
 								"Supatá", "Susa", "Sutatausa", "Tabio", "Tausa", "Tena", "Tenjo", "Tibacuy", "Tibirita",
 								"Tocaima", "Tocancipá", "Topaipí", "Ubalá", "Ubaque", "Ubaté", "Útica", "Venecia",
 								"Vergara", "Vianí", "Villagómez", "Villapinzón", "Villeta", "Viotá", "Yacopí",
 								"Zipacón", "Zipaquirá" };
 						destinoMunicipio.setModel(new DefaultComboBoxModel(listaMunicipioCundinamarca));
 						destinoMunicipio.setVisible(true);
+					} else {
+						if (evento.getStateChange() == ItemEvent.SELECTED) {
+							if (municipio.equals("santander")) {
+								String listaMunicipioSantander[] = { "Bucaramanga", "Aguada", "Albania", "Aratoca",
+										"Barbosa", "Barichara", "Barrancabermeja", "Betulia", "Bolívar", "Cabrera",
+										"California", "Capitanejo", "Carcasí" };
+								destinoMunicipio.setModel(new DefaultComboBoxModel(listaMunicipioSantander));
+								destinoMunicipio.setVisible(true);
+							} else {
+								if (evento.getStateChange() == ItemEvent.SELECTED) {
+									if (municipio.equals("tolima")) {
+										String listaMunicipioTolima[] = { "Ibagué", "Espinal", "Melgar", "Honda",
+												"Líbano", "Chaparral", "Mariquita", "Cajamarca", "Armero Guayabal",
+												"Purificación" };
+										destinoMunicipio.setModel(new DefaultComboBoxModel(listaMunicipioTolima));
+										destinoMunicipio.setVisible(true);
+									} else {
+										if (evento.getStateChange() == ItemEvent.SELECTED) {
+											if (municipio.equals("antioquia")) {
+												String listaMunicipioAntioquia[] = { "Medellín", "Bello", "Itagüí",
+														"Envigado", "Apartadó", "Rionegro", "Turbo", "Caucasia",
+														"Caldas", "Chigorodó" };
+												destinoMunicipio.setModel(new DefaultComboBoxModel(listaMunicipioAntioquia));
+												destinoMunicipio.setVisible(true);
+											} else {
+												if (evento.getStateChange() == ItemEvent.SELECTED) {
+													if (municipio.equals("meta")) {
+														String listaMunicipioMeta[] = { "Villavicencio", "Acacías",
+																"Barranca de Upía", "Cabuyaro", "Castilla la Nueva",
+																"Cubarral", "Cumaral", "El Calvario", "El Castillo",
+																"El Dorado" };
+														destinoMunicipio.setModel(new DefaultComboBoxModel(listaMunicipioMeta));
+														destinoMunicipio.setVisible(true);
+													} else {
+														if (evento.getStateChange() == ItemEvent.SELECTED) {
+															if (municipio.equals("valle del cauca")) {
+																String listaMunicipioVCauca[] = { "Cali",
+																		"Buenaventura", "Palmira", "Tuluá", "Buga",
+																		"Cartago", "Jamundí", "Yumbo", "Sevilla",
+																		"Roldanill" };
+																destinoMunicipio.setModel(new DefaultComboBoxModel(listaMunicipioVCauca));
+																destinoMunicipio.setVisible(true);
+															} else {
+																if (evento.getStateChange() == ItemEvent.SELECTED) {
+																	if (municipio.equals("nariño")) {
+																		String listamunicipioNariño[] = { "Pasto",
+																				"Tumaco", "Ipiales", "La Unión",
+																				"Barbacoas", "Cumbal", "El Charco",
+																				"La Cruz", "San Lorenzo", "Samaniego" };
+																		destinoMunicipio.setModel(new DefaultComboBoxModel(listamunicipioNariño));
+																		destinoMunicipio.setVisible(true);
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 			}
