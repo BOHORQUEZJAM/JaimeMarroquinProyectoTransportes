@@ -124,6 +124,8 @@ public class IOManager extends JFrame implements ActionListener {
 			panelUno.setVisible(false);
 			panelCinco.setVisible(false);
 			panelDos.setVisible(true);
+			setExtendedState(JFrame.MAXIMIZED_BOTH);
+			panelDos.setSize(1300,600);
 		}
 		if (e.getActionCommand().equals(btonTres.getActionCommand())) {
 			panelUno.setVisible(false);
