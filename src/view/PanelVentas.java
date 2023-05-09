@@ -95,15 +95,13 @@ public class PanelVentas extends JPanel implements ItemListener {
 			} else {
 				if (evento.getStateChange() == ItemEvent.SELECTED) {
 					if (municipio.equals("cundinamarca")) {
-						String listaMunicipioCundinamarca[] = { "Agua de Dios", "Albán", "Anapoima", "Anolaima",
+						String listaMunicipioCundinamarca[] = {" ", "Albán", "Anapoima", "Anolaima",
 								"Apulo", "Beltrán", "Bituima", "Bojacá", "Cabrera", "Cachipay", "Cajicá", "Caparrapí",
 								"Cáqueza", "Carmen de Carupa", "Chaguaní", "Chía", "Chipaque", "Choachí", "Chocontá",
-								"Cogua", "Cota", "Cucunubá", "El Colegio", "El Peñón", "El Rosal", "Facatativá",
-								"Fómeque", "Fosca", "Funza", "Fúquene", "Fusagasugá", "Gachalá", "Gachancipá",
-								"Gachetá", "Gama", "Girardot", "Granada", "Guachetá", "Guaduas", "Guasca", "Guataquí",
+								"Cogua", "Cota", "Cucunubá", "El Colegio", "Girardot", "Granada", "Guachetá", "Guaduas", "Guasca", "Guataquí",
 								"Guatavita", "Guayabal de Síquima", "Guayabetal", "Gutiérrez", "Jerusalén", "Junín",
 								"La Calera", "Sibaté", "Silvania", "Simijaca", "Soacha", "Sopó", "Subachoque", "Suesca",
-								"Supatá", "Susa", "Sutatausa", "Tabio", "Tausa", "Tena", "Tenjo", "Tibacuy", "Tibirita",
+								"Supatá", "Susa", "Sutatausa", "Tabio","Tena", "Tenjo", "Tibacuy", "Tibirita",
 								"Tocaima", "Tocancipá", "Topaipí", "Ubalá", "Ubaque", "Ubaté", "Útica", "Venecia",
 								"Vergara", "Vianí", "Villagómez", "Villapinzón", "Villeta", "Viotá", "Yacopí",
 								"Zipacón", "Zipaquirá" };

@@ -35,6 +35,7 @@ public class IOManager extends JFrame implements ActionListener {
 	private ImageIcon iconoCuatro;
 	private ImageIcon iconoCinco;
 	private ImageIcon iconoSeis;
+	private JButton btonVolver;
 
 	public IOManager() {
 		setSize(800, 600);
@@ -110,6 +111,11 @@ public class IOManager extends JFrame implements ActionListener {
 		btonSeis.setBounds(260, 140, 66, 66);
 		btonSeis.addActionListener(this);
 		panelUno.add(btonSeis);
+//		btonVolver = new JButton("volver");
+//		btonVolver.setBounds(600,600,80,35);
+//		btonVolver.setVisible(false);
+//		panelVenta.add(btonVolver);
+		
 
 	}
 
@@ -119,6 +125,7 @@ public class IOManager extends JFrame implements ActionListener {
 		if (e.getActionCommand().equals(btonUno.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelVenta.setVisible(true);
+			btonVolver.setVisible(true);
 		}
 		if (e.getActionCommand().equals(btonDos.getActionCommand())) {
 			panelUno.setVisible(false);
