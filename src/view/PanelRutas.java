@@ -131,6 +131,11 @@ public class PanelRutas extends JPanel implements ItemListener, ActionListener {
 			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoTunja-combita.jpg"));
 			etiqueta.setVisible(true);
 		}
+//		if (condition) {
+			
+//		}if (condition) {
+			
+//		}
 
 	}
 
