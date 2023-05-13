@@ -67,7 +67,7 @@ public class PanelRutas extends JPanel implements ItemListener, ActionListener {
 			if (municipio.equals("boyaca")) {
 				String[] municipioBoyaca = { "", "Tunja", "Chiquiza", "Chivata", "Combita", "Cucaita", "Motavita",
 						"Oicatá", "Samaca", "Siachoque", "Sora", "Soracá", "Sotaquirá", "Toca", "Tuta",
-						"Ventaquemada" };
+				"Ventaquemada" };
 				destinoOrigen.setModel(new DefaultComboBoxModel<>(municipioBoyaca));
 				destinoOrigen.setVisible(true);
 				destinoFinal.setModel(new DefaultComboBoxModel<>(municipioBoyaca));
@@ -90,7 +90,7 @@ public class PanelRutas extends JPanel implements ItemListener, ActionListener {
 			if (municipio.equals("santander")) {
 				String listaMunicipioSantander[] = { "Bucaramanga", "Aguada", "Albania", "Aratoca", "Barbosa",
 						"Barichara", "Barrancabermeja", "Betulia", "Bolívar", "Cabrera", "California", "Capitanejo",
-						"Carcasí" };
+				"Carcasí" };
 				destinoOrigen.setModel(new DefaultComboBoxModel<>(listaMunicipioSantander));
 				destinoOrigen.setVisible(true);
 				destinoFinal.setModel(new DefaultComboBoxModel<>(listaMunicipioSantander));
@@ -121,21 +121,37 @@ public class PanelRutas extends JPanel implements ItemListener, ActionListener {
 	public void mostrarImagenes() {
 		origen = (String) destinoOrigen.getSelectedItem();
 		dFinal = (String) destinoFinal.getSelectedItem();
-		if (origen.equalsIgnoreCase("tunja") && dFinal.equalsIgnoreCase("chivata")) {
+		if (origen.equalsIgnoreCase("tunja") && dFinal.equalsIgnoreCase("chivata")||origen.equalsIgnoreCase("chivata")&&dFinal.equalsIgnoreCase("tunja")) {
 			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoTunja-Chivata.jpg"));
 			etiqueta.setVisible(true);
-		}if (origen.equalsIgnoreCase("tunja") && dFinal.equalsIgnoreCase("chiquiza")) {
+		}if (origen.equalsIgnoreCase("tunja") && dFinal.equalsIgnoreCase("chiquiza")||origen.equalsIgnoreCase("chiquiza")&&dFinal.equalsIgnoreCase("tunja")) {
 			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoTunja-chiquiza.jpg"));
 			etiqueta.setVisible(true);
-		}if (origen.equalsIgnoreCase("tunja") && dFinal.equalsIgnoreCase("combita")) {
+		}if (origen.equalsIgnoreCase("tunja") && dFinal.equalsIgnoreCase("combita")||origen.equalsIgnoreCase("combita")&&dFinal.equalsIgnoreCase("tunja")) {
 			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoTunja-combita.jpg"));
 			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("tunja")&&dFinal.equalsIgnoreCase("cucaita")||origen.equalsIgnoreCase("cucaita")&&dFinal.equalsIgnoreCase("tunja")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoTunja-cucaita.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("chiquiza")&&dFinal.equalsIgnoreCase("chivata")||origen.equalsIgnoreCase("chivata")&&dFinal.equalsIgnoreCase("chiquiza")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoChiquiza-chivata.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("chiquiza")&&dFinal.equalsIgnoreCase("combita")||origen.equalsIgnoreCase("combita")&&dFinal.equalsIgnoreCase("chiquiza")){
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoChiquiza-combita.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("chiquiza")&&dFinal.equalsIgnoreCase("cucaita")||origen.equalsIgnoreCase("cucaita")&&dFinal.equalsIgnoreCase("chiquiza")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src\\imagenes\\destinoChiquiza-cucaita.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("chivata")&&dFinal.equalsIgnoreCase("combita")||origen.equalsIgnoreCase("combita")&&dFinal.equalsIgnoreCase("chivata")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoChivata-combita.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("chivata")&&dFinal.equalsIgnoreCase("cucaita")||origen.equalsIgnoreCase("cucaita")&&dFinal.equalsIgnoreCase("chivata")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoChivata-cucaita.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("combita")&&dFinal.equalsIgnoreCase("cucaita")||origen.equalsIgnoreCase("cucaita")&&dFinal.equalsIgnoreCase("combita")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoCombita-cucaita.jpg"));
+			etiqueta.setVisible(true);
 		}
-//		if (condition) {
-			
-//		}if (condition) {
-			
-//		}
 
 	}
 
