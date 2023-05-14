@@ -75,12 +75,9 @@ public class PanelRutas extends JPanel implements ItemListener, ActionListener {
 				boton.setVisible(true);
 			}
 			if (municipio.equals("cundinamarca")) {
-				String listaMunicipioCundinamarca[] = { " ", "Albán", "Anapoima", "Anolaima", "Apulo", "Beltrán",
-						"Bituima", "Bojacá", "Cabrera", "Cachipay", "Cajicá", "Caparrapí", "Cáqueza",
-						"Carmen de Carupa", "Chaguaní", "Chía", "Chipaque", "Choachí", "Chocontá", "Cogua", "Cota",
-						"Cucunubá", "El Colegio", "Girardot", "Granada", "Guachetá", "Guaduas", "Guasca", "Guataquí",
-						"Guatavita", "Guayabal de Síquima", "Guayabetal", "Gutiérrez", "Jerusalén", "Junín",
-						"La Calera", "Sibaté" };
+				String listaMunicipioCundinamarca[] = { " ", "Alban", "Anapoima", "Anolaima","Cajica","Caqueza",
+						"Carmen de Carupa", "Chía","Choconta", "Cota", "El Colegio", "Girardot", "Granada",
+						"Guatavita","La Calera","Sibate" };
 				destinoOrigen.setModel(new DefaultComboBoxModel<>(listaMunicipioCundinamarca));
 				destinoOrigen.setVisible(true);
 				destinoFinal.setModel(new DefaultComboBoxModel<>(listaMunicipioCundinamarca));
@@ -150,6 +147,57 @@ public class PanelRutas extends JPanel implements ItemListener, ActionListener {
 			etiqueta.setVisible(true);
 		}if (origen.equalsIgnoreCase("combita")&&dFinal.equalsIgnoreCase("cucaita")||origen.equalsIgnoreCase("cucaita")&&dFinal.equalsIgnoreCase("combita")) {
 			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoCombita-cucaita.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("alban")&&dFinal.equalsIgnoreCase("anapoima")||origen.equalsIgnoreCase("anapoima")&&dFinal.equalsIgnoreCase("alban")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAlban-anapoima.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("alban")&&dFinal.equalsIgnoreCase("anolaima")||origen.equalsIgnoreCase("anolaima")&&dFinal.equalsIgnoreCase("alban")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAlban-anolaima.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("alban")&&dFinal.equalsIgnoreCase("cajica")||origen.equalsIgnoreCase("cajica")&&dFinal.equalsIgnoreCase("alban")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAlban-cajica.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("alban")&&dFinal.equalsIgnoreCase("caqueza")||origen.equalsIgnoreCase("caqueza")&&dFinal.equalsIgnoreCase("alban")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAlban-caqueza.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("alban")&&dFinal.equalsIgnoreCase("choconta")||origen.equalsIgnoreCase("choconta")&&dFinal.equalsIgnoreCase("alban")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAlban-choconta.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("alban")&&dFinal.equalsIgnoreCase("granada")||origen.equalsIgnoreCase("granada")&&dFinal.equalsIgnoreCase("alban")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAlban-granada.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("alban")&&dFinal.equalsIgnoreCase("sibate")||origen.equalsIgnoreCase("sibate")&&dFinal.equalsIgnoreCase("alban")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAlban-sibate.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anapoima")&&dFinal.equalsIgnoreCase("sibate")||origen.equalsIgnoreCase("sibate")&&dFinal.equalsIgnoreCase("anapoima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnapoima-sibate.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anapoima")&&dFinal.equalsIgnoreCase("cajica")||origen.equalsIgnoreCase("cajica")&&dFinal.equalsIgnoreCase("anapoima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnapoima-cajica.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anapoima")&&dFinal.equalsIgnoreCase("carmen de carupa")||origen.equalsIgnoreCase("carmen de carupa")&&dFinal.equalsIgnoreCase("anapoima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnapoima-carmendecarupa.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anapoima")&&dFinal.equalsIgnoreCase("girardot")||origen.equalsIgnoreCase("girardot")&&dFinal.equalsIgnoreCase("anapoima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnapoima-girardot.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anolaima")&&dFinal.equalsIgnoreCase("cajica")||origen.equalsIgnoreCase("cajica")&&dFinal.equalsIgnoreCase("anolaima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnolaima-cajica.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anolaima")&&dFinal.equalsIgnoreCase("caqueza")||origen.equalsIgnoreCase("caqueza")&&dFinal.equalsIgnoreCase("anolaima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnolaima-caqueza.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anolaima")&&dFinal.equalsIgnoreCase("choconta")||origen.equalsIgnoreCase("choconta")&&dFinal.equalsIgnoreCase("anolaima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnolaima-choconta.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anolaima")&&dFinal.equalsIgnoreCase("cota")||origen.equalsIgnoreCase("cota")&&dFinal.equalsIgnoreCase("anolaima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnolaima-cota.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("anolaima")&&dFinal.equalsIgnoreCase("sibate")||origen.equalsIgnoreCase("sibate")&&dFinal.equalsIgnoreCase("anolaima")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoAnolaima-sibate.jpg"));
+			etiqueta.setVisible(true);
+		}if (origen.equalsIgnoreCase("carmen de carupa")&&dFinal.equalsIgnoreCase("sibate")||origen.equalsIgnoreCase("sibate")&&dFinal.equalsIgnoreCase("carmen de carupa")) {
+			etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//destinoCarmenCarupa-sibate.jpg"));
 			etiqueta.setVisible(true);
 		}
 
