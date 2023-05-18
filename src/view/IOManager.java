@@ -1,19 +1,27 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.Date;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.border.LineBorder;
 
-public class IOManager extends JFrame implements ActionListener {
+import control.Controller;
+
+public class IOManager extends JFrame implements ActionListener, CustomEventResponce {
 
 	private JPanel panelUno;
 	private JPanel panelVenta;
@@ -36,6 +44,7 @@ public class IOManager extends JFrame implements ActionListener {
 	private ImageIcon iconoCinco;
 	private ImageIcon iconoSeis;
 	private JButton btonVolver;
+	private Image imagen;
 
 	public IOManager() {
 		setSize(800, 600);
@@ -43,16 +52,25 @@ public class IOManager extends JFrame implements ActionListener {
 		setLocationRelativeTo(null);
 		setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		Controller objeController = new Controller();
+		objeController.setObjetoResponce(this);
 
 		scrollPane = new JScrollPane();
+		btonVolver = new JButton("volver");
+		btonVolver.setBounds(300, 480, 60, 30);
+		btonVolver.setVisible(false);
+		add(btonVolver);
 		panelUno = new JPanel();
 		panelUno.setBounds(200, 70, 400, 400);
 		panelUno.setLayout(null);
 		panelUno.setBorder(new LineBorder(Color.decode("#0C5172"), 40));
+		panelUno.add(btonVolver);
+		;
 		add(panelUno);
 		panelVenta = new PanelVentas(scrollPane);
-		panelVenta.setBounds(180, 20, 400, 500);
+		panelVenta.setBounds(180, 20, 460, 540);
 		panelVenta.setVisible(false);
+		((PanelVentas) panelVenta).setEvento(objeController);
 		add(panelVenta);
 		panelDos = new PanelRutas();
 		panelDos.setBounds(30, 30, 600, 500);
@@ -71,7 +89,7 @@ public class IOManager extends JFrame implements ActionListener {
 		panelCinco.setVisible(false);
 		add(panelCinco);
 		panelSeis = new PanelEmergencias();
-		panelSeis.setBounds(30, 30, 600, 500);
+		panelSeis.setBounds(30, 30, 490,490);
 		panelSeis.setVisible(false);
 		add(panelSeis);
 		iconoUno = new ImageIcon("src/imagenes/terminal-de-punto-de-venta.png");
@@ -109,15 +127,12 @@ public class IOManager extends JFrame implements ActionListener {
 		panelUno.add(btonCinco);
 		btonSeis = new JButton(iconoSeis);
 		btonSeis.setBounds(260, 140, 66, 66);
+		btonSeis.setActionCommand("info");
 		btonSeis.addActionListener(this);
 		panelUno.add(btonSeis);
-//		btonVolver = new JButton("volver");
-//		btonVolver.setBounds(600,600,80,35);
-//		btonVolver.setVisible(false);
-//		panelVenta.add(btonVolver);
-		
 
 	}
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -125,35 +140,118 @@ public class IOManager extends JFrame implements ActionListener {
 		if (e.getActionCommand().equals(btonUno.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelVenta.setVisible(true);
+			btonVolver.setActionCommand("volver");
+			btonVolver.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					panelVenta.setVisible(false);
+					panelUno.setVisible(true);
+				}
+			});
+			panelVenta.add(btonVolver);
 			btonVolver.setVisible(true);
 		}
 		if (e.getActionCommand().equals(btonDos.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelCinco.setVisible(false);
 			panelDos.setVisible(true);
+			btonVolver.setBounds(380, 400,100,30);
 			setExtendedState(JFrame.MAXIMIZED_BOTH);
-			panelDos.setSize(1300,600);
+			panelDos.setSize(1300, 600);
+			btonVolver.setActionCommand("volver");
+			btonVolver.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					panelDos.setVisible(false);
+					panelUno.setVisible(true);
+				}
+			});
+			panelDos.add(btonVolver);
+			btonVolver.setVisible(true);
 		}
 		if (e.getActionCommand().equals(btonTres.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelDos.setVisible(false);
 			panelTres.setVisible(true);
+			btonVolver.setBounds(380, 400,100,30);
+			btonVolver.setActionCommand("volver");
+			btonVolver.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					panelTres.setVisible(false);
+					panelUno.setVisible(true);
+				}
+			});
+			panelTres.add(btonVolver);
+			btonVolver.setVisible(true);
 		}
 		if (e.getActionCommand().equals(btonCuatro.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelTres.setVisible(false);
 			panelCuatro.setVisible(true);
+			btonVolver.setBounds(380, 400,100,30);
+			btonVolver.setActionCommand("volver");
+			btonVolver.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					panelCuatro.setVisible(false);
+					panelUno.setVisible(true);
+				}
+			});
+			panelCuatro.add(btonVolver);
+			btonVolver.setVisible(true);
 		}
 		if (e.getActionCommand().equals(btonCinco.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelCuatro.setVisible(false);
 			panelCinco.setVisible(true);
+			btonVolver.setBounds(380, 400,100,30);
+			btonVolver.setActionCommand("volver");
+			btonVolver.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					panelCinco.setVisible(false);
+					panelUno.setVisible(true);
+				}
+			});
+			panelCinco.add(btonVolver);
+			btonVolver.setVisible(true);
 		}
 		if (e.getActionCommand().equals(btonSeis.getActionCommand())) {
 			panelUno.setVisible(false);
 			panelCinco.setVisible(false);
 			panelSeis.setVisible(true);
+			btonVolver.setBounds(380, 400,100,30);
+			btonVolver.setActionCommand("volver");
+			btonVolver.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					panelSeis.setVisible(false);
+					panelUno.setVisible(true);
+				}
+			});
+			panelSeis.add(btonVolver);
+			btonVolver.setVisible(true);
 		}
+	}
+	
+
+	@Override
+	public void recibirRespuestas(int precio, String mensaje, String fecha) {
+		// TODO Auto-generated method stub
+		((PanelVentas) panelVenta).respuesta(precio, mensaje, fecha);
 	}
 
 }

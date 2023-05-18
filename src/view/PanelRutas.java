@@ -49,7 +49,7 @@ public class PanelRutas extends JPanel implements ItemListener, ActionListener {
 		destinoFinal.setVisible(false);
 		add(destinoFinal);
 		etiqueta = new JLabel();
-		etiqueta.setBounds(5, 5, 550, 370);
+		etiqueta.setBounds(5,60,700,500);
 		etiqueta.setVisible(false);
 		add(etiqueta);
 		boton = new JButton("MOSTRAR");
