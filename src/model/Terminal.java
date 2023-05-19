@@ -25,9 +25,9 @@ public class Terminal {
 					|| destinoOrigenString.equalsIgnoreCase("chiquiza")
 					&& destinoFinalString.equalsIgnoreCase("tunja")) {
 				suma = 5000 * valor;
-				setMensaje("\nnobre del cliente= " + nombreString + "\nidentificacion del cliente= " + iDString
+				mensaje="\nnobre del cliente= " + nombreString + "\nidentificacion del cliente= " + iDString
 						+ "\n empresa tranportadora= " + empresa + "\nplaca del veiculo= " + vehiculoString + "\ntramo= "
-						+ destinoOrigenString + "-" + destinoFinalString + "\nnuemro de pasajeros= " + valor+"\n");
+						+ destinoOrigenString + "-" + destinoFinalString + "\nnuemro de pasajeros= " + valor+"\n";
 				JOptionPane.showMessageDialog(null, suma);
 			}
 

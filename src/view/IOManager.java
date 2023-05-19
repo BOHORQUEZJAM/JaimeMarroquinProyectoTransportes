@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -63,6 +64,7 @@ public class IOManager extends JFrame implements ActionListener, CustomEventResp
 		panelUno = new JPanel();
 		panelUno.setBounds(200, 70, 400, 400);
 		panelUno.setLayout(null);
+		panelUno.setBackground(Color.decode("#0C5172"));
 		panelUno.setBorder(new LineBorder(Color.decode("#0C5172"), 40));
 		panelUno.add(btonVolver);
 		;
@@ -70,18 +72,23 @@ public class IOManager extends JFrame implements ActionListener, CustomEventResp
 		panelVenta = new PanelVentas(scrollPane);
 		panelVenta.setBounds(180, 20, 460, 540);
 		panelVenta.setVisible(false);
+		panelVenta.setBackground(Color.decode("#110442"));
 		((PanelVentas) panelVenta).setEvento(objeController);
 		add(panelVenta);
 		panelDos = new PanelRutas();
 		panelDos.setBounds(30, 30, 600, 500);
+		panelDos.setBackground(Color.decode("#0C5172"));
 		panelDos.setVisible(false);
 		add(panelDos);
 		panelTres = new PanelComidas();
 		panelTres.setBounds(30, 30, 600, 500);
+		panelTres.setBackground(Color.decode("#16A085"));
 		panelTres.setVisible(false);
+		((PanelComidas)panelTres).setEventComidas(objeController);
 		add(panelTres);
 		panelCuatro = new PanelHospedaje();
 		panelCuatro.setBounds(30, 30, 600, 500);
+		panelCuatro.setBackground(Color.decode("#110442"));
 		panelCuatro.setVisible(false);
 		add(panelCuatro);
 		panelCinco = new PanelInformacion();
@@ -130,7 +137,10 @@ public class IOManager extends JFrame implements ActionListener, CustomEventResp
 		btonSeis.setActionCommand("info");
 		btonSeis.addActionListener(this);
 		panelUno.add(btonSeis);
-
+		JLabel etiqueta= new JLabel();
+		etiqueta.setIcon(new javax.swing.ImageIcon("src//imagenes//800007124.jpg"));
+		etiqueta.setBounds(5, 5,1900,900);
+		add(etiqueta);
 	}
 	
 
@@ -252,6 +262,21 @@ public class IOManager extends JFrame implements ActionListener, CustomEventResp
 	public void recibirRespuestas(int precio, String mensaje, String fecha) {
 		// TODO Auto-generated method stub
 		((PanelVentas) panelVenta).respuesta(precio, mensaje, fecha);
+	}
+
+
+	@Override
+	public void recibirResCafeteria(String mensajeRespuestaaCafeteria) {
+		// TODO Auto-generated method stub
+		((PanelComidas)panelTres).respuestaMenu(mensajeRespuestaaCafeteria);
+		
+	}
+
+
+	@Override
+	public void respuestaCliente(String respuesta) {
+		// TODO Auto-generated method stub
+		((PanelComidas)panelTres).respuestaCliente(respuesta);
 	}
 
 }

@@ -44,7 +44,7 @@ public class PanelVentas extends JPanel implements ItemListener, ActionListener 
 	private JButton botonVeiculo;
 	private JComboBox comboVehiculos;
 	private JButton boton;
-	private CustomEvent evento;
+	private CustomEvent eventoVentas;
 	private String mensaje;
 	private String fechaHora;
 
@@ -260,7 +260,7 @@ public class PanelVentas extends JPanel implements ItemListener, ActionListener 
 		String destinoFinalString = (String) destinoMunicipioDfinal.getSelectedItem();
 		int valor = (Integer) numPasajeros.getValue();
 		String municipio = (String) this.municipio;
-		evento.datosObtenidos(nombreString, iDString, empresa, vehiculoString, municipio, destinoOrigenString,
+		eventoVentas.datosObtenidosVentas(nombreString, iDString, empresa, vehiculoString, municipio, destinoOrigenString,
 				destinoFinalString, valor);
 
 	}
@@ -290,11 +290,11 @@ public class PanelVentas extends JPanel implements ItemListener, ActionListener 
 
 	// metodos get y set
 	public CustomEvent getEvento() {
-		return evento;
+		return eventoVentas;
 	}
 
 	public void setEvento(Controller objetoController) {
-		this.evento = (CustomEvent) objetoController;
+		this.eventoVentas = (CustomEvent) objetoController;
 	}
 
 }
