@@ -1,5 +1,8 @@
 package control;
-
+/*
+ * JAIME MARROQUIN
+ * PROYECTO TRANSPORTES(POO)
+ */
 import java.util.Date;
 
 import javax.swing.JOptionPane;
@@ -13,16 +16,19 @@ import view.CustomEventResponce;
 import view.IOManager;
 
 public class Controller implements CustomEvent{
+	//DECLARACION DE VARIABLES
 	private Terminal objetotTerminal;
 	private CafeteriaTerminal objetoCafeteriaTerminal;
-private CustomEventResponce objetoResponce;
-private Archivos objetoArchivos;
+	private CustomEventResponce objetoResponce;
+	private Archivos objetoArchivos;
+	//METODO CONSTRUCTOR
 	public Controller() {
 		// TODO Auto-generated constructor stub
 		objetoArchivos = new Archivos();
 		objetotTerminal = new Terminal();
 		objetoCafeteriaTerminal= new CafeteriaTerminal();
 	}
+	//METODOS PROPIOS
 	@Override
 	public void datosObtenidosVentas(String nombreString, String iDString, String empresa, String vehiculoString,
 			String destinoOrigenString, String destinoFinalString, String municipio, Integer valor) {
@@ -30,6 +36,7 @@ private Archivos objetoArchivos;
 		int precio = objetotTerminal.getSuma();
 		String mensaje = objetotTerminal.getMensaje();
 		String fecha = objetotTerminal.obtenerHoraFecha();
+		System.out.println(mensaje);
 		objetoResponce.recibirRespuestas(precio,mensaje,fecha);
 		objetoArchivos.crearFactura(nombreString,iDString,empresa,vehiculoString,destinoOrigenString,destinoFinalString,municipio,valor,precio,fecha,mensaje);
 	}
@@ -45,20 +52,20 @@ private Archivos objetoArchivos;
 		String respuesta =objetoCafeteriaTerminal.datosCafeteria(variable,variableDos);
 		objetoResponce.respuestaCliente(respuesta);
 	}
-	
+
 	public void init () {
 		IOManager objetoIoManager = new IOManager();
 		objetoIoManager.setVisible(true);
-		
+
 	}
-	
-	
+
+//METODOS GET Y SET
 	public CustomEventResponce getObjetoResponce() {
 		return objetoResponce;
 	}
 	public void setObjetoResponce(CustomEventResponce objetoResponce) {
 		this.objetoResponce = objetoResponce;
 	}
-	
-	
+
+
 }

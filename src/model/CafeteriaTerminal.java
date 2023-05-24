@@ -1,5 +1,8 @@
 package model;
-
+/*
+ * JAIME MARROQUIN
+ * PROYECTO TRANSPORTES(POO)
+ */
 public class CafeteriaTerminal  {
 	private String mensajeCafeteria;
 	private String respuesta;
@@ -10,7 +13,7 @@ public class CafeteriaTerminal  {
 		return mensajeCafeteria=contenico;
 	}
 	public String datosCafeteria(String variable, String variableDos) {
-		respuesta="señor "+variable+"usuario su pedido  es:"+mensajeCafeteria;
+		respuesta="señor "+variable+"  su pedido  es:"+mensajeCafeteria;
 		return respuesta;
 	}
 }

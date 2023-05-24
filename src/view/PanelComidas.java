@@ -1,10 +1,12 @@
 package view;
-
+/*
+ * JAIME MARROQUIN
+ * PROYECTO  TRANPORTE (POO)
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.Iterator;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -16,6 +18,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 public class PanelComidas extends JPanel implements ItemListener, ActionListener {
+	//DECLARACION DE VARIABLES
 	private JRadioButton desayuno;
 	private JRadioButton almuerzo;
 	private JRadioButton sena;
@@ -45,7 +48,7 @@ public class PanelComidas extends JPanel implements ItemListener, ActionListener
 	// private String variNueve;
 	// private String variDiez;
 	private CustomEvent eventComidas;
-
+//METODO CONSTRUCTOR
 	public PanelComidas() {
 		setLayout(null);
 		setBorder(BorderFactory.createTitledBorder("panel de comidas"));
@@ -135,7 +138,7 @@ public class PanelComidas extends JPanel implements ItemListener, ActionListener
 		textoID.setVisible(false);
 		add(textoID);
 	}
-
+//METODOS PROPIOS
 	public void seleccionCheck() {
 		contenido = "";
 		JCheckBox[] asignaturas = { unoBox, dosBox, tresBox, cuatroBox, cincoBox, seisBox, sieteBox, ochoBox, nueveBox,
@@ -180,7 +183,6 @@ public class PanelComidas extends JPanel implements ItemListener, ActionListener
 			diezBox.getText();
 			textoNombre.setVisible(true);
 			textoID.setVisible(true);
-			JOptionPane.showMessageDialog(null, contenido);
 
 		}
 		if (almuerzo.isSelected()) {
@@ -217,7 +219,7 @@ public class PanelComidas extends JPanel implements ItemListener, ActionListener
 			diezBox.setVisible(true);
 			textoNombre.setVisible(true);
 			textoID.setVisible(true);
-			JOptionPane.showMessageDialog(null, contenido);
+			
 		}
 		if (sena.isSelected()) {
 			contenido = sena.getText();
@@ -253,7 +255,7 @@ public class PanelComidas extends JPanel implements ItemListener, ActionListener
 			diezBox.setVisible(true);
 			textoNombre.setVisible(true);
 			textoID.setVisible(true);
-			JOptionPane.showMessageDialog(null, contenido);
+		
 		}
 	}
 
@@ -279,15 +281,14 @@ public class PanelComidas extends JPanel implements ItemListener, ActionListener
 	}
 
 	public void respuestaMenu(String mensajeRespuestaaCafeteria) {
-		String uno,dos;
 		
-		JOptionPane.showMessageDialog(null, mensajeRespuestaaCafeteria);
+//		JOptionPane.showMessageDialog(null, mensajeRespuestaaCafeteria);
 	}
 	public void respuestaCliente(String respuesta) {
 		// TODO Auto-generated method stub
 		JOptionPane.showMessageDialog(null, respuesta);
 	}
-	//declaracion de variables
+	//METODOS GET  Y SET
 	public CustomEvent getEventComidas() {
 		return eventComidas;
 	}

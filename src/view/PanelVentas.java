@@ -56,6 +56,7 @@ public class PanelVentas extends JPanel implements ItemListener, ActionListener 
 		setBackground(Color.white);
 		setLayout(null);
 
+		mensajeRespuesta= "";
 		String listaDepartamento[] = { "   ", "boyaca", "cundinamarca", "santander", "tolima", "antioquia", "meta",
 				"valle del cauca", "nariño" };
 		String listaEmpresas[] = { "libertadores", "gasela", "concord", "velociba", "delfines", "cotrabens" };
@@ -273,7 +274,7 @@ public class PanelVentas extends JPanel implements ItemListener, ActionListener 
 
 	private void visivilizarArea() {
 		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, fechaHora + mensajeRespuesta + tarifa);
+		JOptionPane.showMessageDialog(null, fechaHora +"su compra a sido exitosa");
 	}
 
 	@Override

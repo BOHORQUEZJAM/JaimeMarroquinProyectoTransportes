@@ -1,5 +1,8 @@
 package view;
-
+/*
+ * jaime marroquin
+ * proyecton tranportes(POO)
+ */
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
@@ -23,7 +26,7 @@ import javax.swing.border.LineBorder;
 import control.Controller;
 
 public class IOManager extends JFrame implements ActionListener, CustomEventResponce {
-
+//DECLARACION DE VARIABLES
 	private JPanel panelUno;
 	private JPanel panelVenta;
 	private JPanel panelDos;
@@ -46,7 +49,7 @@ public class IOManager extends JFrame implements ActionListener, CustomEventResp
 	private ImageIcon iconoSeis;
 	private JButton btonVolver;
 	private Image imagen;
-
+//METODO CONSTRUCTOR
 	public IOManager() {
 		setSize(800, 600);
 		setTitle("PANTALLA DE INICIO");
@@ -143,7 +146,7 @@ public class IOManager extends JFrame implements ActionListener, CustomEventResp
 		add(etiqueta);
 	}
 	
-
+//METODOS PROPIOS
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
